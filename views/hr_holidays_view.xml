@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    	<record id="hr_holidays_form_inherit" model="ir.ui.view">
+        <field name="name">hr.holidays.form.inherit</field>
+        <field name="model">hr.holidays</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position='after'>
+                <div name="information" attrs="{'invisible':[('type','=','add')]}">
+                    <p style="color:red;">Consider the public holidays and weekends/weekly holidays before filling leaves duration. Skip public/weekend holidays from the leaves duration.</p>
+                    <p style="color:red;">The Leaves duration should cover the whole of the working day timings to be considered</p>
+                </div>
+            </xpath>
+        </field>
+    	</record>
+	
+	</data>
+</odoo>
